@@ -17,9 +17,29 @@ export default function Search({ input }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US`);
-        console.log(res);
-        setData(res.data.results);
+        let currPage = 2;
+        const allData = [];
+        const response = await fetch(`
+        https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${currPage}`);
+        const result = await response.json();
+        result.results.forEach((el) => {
+          allData.push(el);
+        });
+
+        const totalpage = result.total_pages;
+        while (currPage <= 20) {
+          currPage++;
+          const newresponse = await fetch(`
+          https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${currPage}`);
+          const newresult = await newresponse.json();
+          newresult.results.forEach((el) => {
+            allData.push(el);
+          });
+        }
+
+        console.log(allData);
+
+        setData(allData);
       } catch (err) {
         console.log(err);
       }
