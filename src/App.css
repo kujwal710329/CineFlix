@@ -1,0 +1,20 @@
+.App {
+  background: rgb(18, 18, 18);
+  color: rgb(245, 245, 245);
+  font-family: sans-serif;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 960px) {
+  .App {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  :root {
+    font-size: 50%;
+  }
+}

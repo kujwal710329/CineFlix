@@ -1,0 +1,149 @@
+.header {
+  display: flex;
+  height: 100px;
+  width: 80vw;
+  align-items: center;
+  background: rgb(18, 18, 18);
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  column-gap: 4%;
+  margin-left: 1vw;
+}
+.header-right {
+  display: flex;
+  flex-direction: column;
+}
+
+#page:hover {
+  color: red;
+}
+
+.fa,
+.fas {
+  font-weight: 900;
+  margin-left: 10px;
+}
+
+span {
+  color: white;
+  font-size: large;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.auth {
+  height: 33px;
+  width: 100px;
+  margin-right: 10px;
+  background: transparent;
+  border: 1px solid whitesmoke;
+  color: rgb(245, 245, 245);
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: medium;
+  border-radius: 5px;
+}
+
+.auth:hover {
+  background-color: red;
+  border: transparent;
+}
+
+.username .user {
+  display: flex;
+  flex-direction: column;
+}
+.username {
+  display: flex;
+  column-gap: 10%;
+}
+
+.Menu_bar {
+  display: none;
+}
+
+.fa-bars {
+  color: white;
+}
+.toggler {
+  background-color: transparent;
+  border: transparent;
+  display: none;
+}
+
+.dropdown {
+  box-sizing: border-box;
+  position: relative;
+}
+.item_block {
+  background: rgb(18, 18, 18);
+  position: absolute;
+  top: 6vh;
+  right: -7vw;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 51vw;
+  padding-right: 40vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  text-align: center;
+  animation: dropdown 0.5s ease forwards;
+  /* Additional styles */
+}
+
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.item {
+  list-style: none;
+}
+/* responsive layout */
+@media (max-width: 960px) {
+  .header {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .header-left {
+    width: 50%;
+    justify-content: space-between;
+  }
+  .header-right {
+    margin-right: 4vw;
+  }
+  .Menu_bar {
+    display: block;
+    height: 100%;
+  }
+  .menu_list {
+    position: relative;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    top: 100px;
+  }
+  #page {
+    display: none;
+  }
+  .toggler {
+    display: block;
+  }
+}

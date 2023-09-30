@@ -1,0 +1,39 @@
+.movie_list {
+  padding: 3rem 0rem 3rem 0rem;
+}
+.list_title {
+  display: flex;
+  column-gap: 3vw;
+}
+
+#headtext {
+  padding: 3px;
+  font-size: 2.3rem;
+}
+#headtext:hover {
+  color: red;
+}
+.upcoming {
+  border-bottom: 4px groove red;
+}
+.top_rated {
+  border-bottom: 4px groove red;
+}
+.popular {
+  border-bottom: 4px groove red;
+}
+
+.list_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 960px) {
+  .list_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
